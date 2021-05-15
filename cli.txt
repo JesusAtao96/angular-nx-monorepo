@@ -1,0 +1,3 @@
+nx generate @nrwl/angular:component button --project=dc-ui
+nx run dc-ui:test --codeCoverage
+npm run affected:test -- --all --codeCoverage

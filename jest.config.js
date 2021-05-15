@@ -3,5 +3,5 @@ module.exports = {
     '<rootDir>/apps/restaurant',
     '<rootDir>/libs/dc-ui',
     '<rootDir>/libs/order',
-  ],
+  ]
 };
