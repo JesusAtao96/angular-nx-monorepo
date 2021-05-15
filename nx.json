@@ -25,6 +25,9 @@
     "restaurant-e2e": {
       "tags": [],
       "implicitDependencies": ["restaurant"]
+    },
+    "dc-ui": {
+      "tags": []
     }
   }
 }
