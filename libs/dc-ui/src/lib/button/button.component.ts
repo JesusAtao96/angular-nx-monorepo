@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Styles } from '@dc/models';
+import { Styles, User } from '@dc/models';
 
 @Component({
   selector: 'dc-button',
@@ -8,11 +8,17 @@ import { Styles } from '@dc/models';
 })
 export class ButtonComponent {
   @Input() text = 'Click me!';
-  @Input() style: Styles = 'default';
+  @Input() style: Styles = 'danger';
+  @Input() visible = true;
 
-  @Output() clicked = new EventEmitter<string>();
+  @Output() clicked = new EventEmitter<User>();
 
   notify() {
-    this.clicked.emit('Somebody clicked me!');
+    const user: User = {
+      name: 'Jesus',
+      skills: ['code', 'bike', 'football']
+    };
+
+    this.clicked.emit(user);
   }
 }

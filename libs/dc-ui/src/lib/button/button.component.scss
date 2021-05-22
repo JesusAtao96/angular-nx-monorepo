@@ -1,0 +1,22 @@
+.button {
+  padding: 2rem;
+  border: 1px solid orange;
+  border-radius: 1rem;
+  color: whitesmoke;
+
+  &.default {
+    background-color: #3e8ed0;
+  }
+
+  &.primary {
+    background-color: #00d1b2;
+  }
+
+  &.warning {
+    background-color: #ffe08a;
+  }
+
+  &.danger {
+    background-color: #f14668;
+  }
+}
