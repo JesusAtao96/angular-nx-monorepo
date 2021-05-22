@@ -50,6 +50,9 @@
     },
     "mocks": {
       "tags": []
+    },
+    "material": {
+      "tags": []
     }
   }
 }
