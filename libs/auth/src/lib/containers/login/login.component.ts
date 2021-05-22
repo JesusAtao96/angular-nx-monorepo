@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Authenticate } from '@dc/models';
 
 @Component({
@@ -7,12 +7,7 @@ import { Authenticate } from '@dc/models';
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class LoginComponent {
 
   login(auth: Authenticate):void {
     console.log(auth);
