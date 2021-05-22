@@ -44,6 +44,9 @@
     "dc-ui-e2e": {
       "tags": [],
       "implicitDependencies": ["dc-ui"]
+    },
+    "auth": {
+      "tags": []
     }
   }
 }
