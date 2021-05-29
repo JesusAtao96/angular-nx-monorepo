@@ -18,6 +18,6 @@
         </mat-error>
       </mat-form-field>
     </form>
-    <button mat-raised-button (click)="login()">Acceder</button>
+    <button mat-raised-button [disabled]="loginForm.invalid" (click)="login()">Acceder</button>
   </mat-card-content>
 </mat-card>
