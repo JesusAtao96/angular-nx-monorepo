@@ -22,7 +22,8 @@
       "@dc/mocks": ["libs/mocks/src/index.ts"],
       "@dc/material": ["libs/material/src/index.ts"],
       "@dc/layout": ["libs/layout/src/index.ts"],
-      "@dc/dishes": ["libs/dishes/src/index.ts"]
+      "@dc/dishes": ["libs/dishes/src/index.ts"],
+      "@dc/products": ["libs/products/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

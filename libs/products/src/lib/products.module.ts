@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { DishesComponent } from './containers/dishes/dishes.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: DishesComponent}
+      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
     ])
-  ],
-  declarations: [
-    DishesComponent
   ]
 })
-export class DishesModule {}
+export class ProductsModule {}

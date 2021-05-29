@@ -8,6 +8,7 @@ module.exports = {
     '<rootDir>/libs/mocks',
     '<rootDir>/libs/material',
     '<rootDir>/libs/layout',
-    '<rootDir>/libs/dishes'
+    '<rootDir>/libs/dishes',
+    '<rootDir>/libs/products'
   ]
 };

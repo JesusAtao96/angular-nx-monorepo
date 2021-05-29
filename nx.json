@@ -59,6 +59,9 @@
     },
     "dishes": {
       "tags": []
+    },
+    "products": {
+      "tags": []
     }
   }
 }

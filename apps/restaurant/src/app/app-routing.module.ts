@@ -4,22 +4,26 @@ import { Routes, RouterModule } from '@angular/router';
 import { authRoutes } from '@dc/auth';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'dishes' },
   {
     path: 'auth',
     children: authRoutes
   },
   {
     path: 'dishes',
-    loadChildren: () => import('@dc/dishes').then((module) => module.DishesModule)
+    loadChildren: () =>
+      import('@dc/dishes').then((module) => module.DishesModule)
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('@dc/products').then((module) => module.ProductsModule)
+  }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
-  ],
+  imports: [RouterModule.forRoot(routes, { initialNavigation: 'enabled' })],
   exports: [RouterModule],
-  providers: [],
+  providers: []
 })
 export class AppRoutingModule {}
