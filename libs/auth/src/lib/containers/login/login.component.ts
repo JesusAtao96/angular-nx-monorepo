@@ -13,21 +13,16 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class LoginComponent implements OnDestroy {
   subscription!: Subscription;
-  private unsubscribe$!: Subject<void>;
+  // private unsubscribe$!: Subject<void>;
 
   constructor(private authService: AuthService) {}
 
   login(auth: Authenticate):void {
+    /* .pipe(
+      takeUntil(this.unsubscribe$)
+    ) */
     console.log(auth);
-    this.subscription = this.authService.login(auth)
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe(
-        (response) => {
-          console.log('response', response);
-        }
-      );
+    this.subscription = this.authService.login(auth).subscribe();
   }
 
   ngOnDestroy() {
@@ -35,8 +30,8 @@ export class LoginComponent implements OnDestroy {
     this.subscription.unsubscribe();
 
     // Unsubscribe forma 2
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    /* this.unsubscribe$.next();
+    this.unsubscribe$.complete(); */
   }
 
 }
