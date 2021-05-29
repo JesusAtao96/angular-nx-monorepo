@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnDestroy {
-  subscription!: Subscription;
+  subscription: Subscription = new Subscription();
   // private unsubscribe$!: Subject<void>;
 
   constructor(private authService: AuthService) {}
