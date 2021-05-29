@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Authenticate } from '@dc/models';
 
 @Component({
@@ -9,9 +10,17 @@ import { Authenticate } from '@dc/models';
 export class LoginFormComponent {
   // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() submit = new EventEmitter<Authenticate>();
+  loginForm = new FormGroup({
+    username: new FormControl('', [ Validators.required ]),
+    password: new FormControl('', [ Validators.required ])
+  });
 
-  login(auth: Authenticate):void {
-    this.submit.emit(auth);
+  login(): void {
+    // this.submit.emit(this.loginForm.value);
+    this.submit.emit({
+      username: this.loginForm.value.username,
+      password: this.loginForm.value.password
+    } as Authenticate);
   }
 
 }

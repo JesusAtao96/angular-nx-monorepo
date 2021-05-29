@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Route } from '@angular/router';
 
 import { MaterialModule } from '@dc/material';
@@ -16,7 +17,7 @@ export const authRoutes: Route[] = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule, ReactiveFormsModule],
   declarations: [
     LoginComponent,
     LoginFormComponent
