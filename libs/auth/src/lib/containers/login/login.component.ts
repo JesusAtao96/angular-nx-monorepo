@@ -13,7 +13,7 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class LoginComponent implements OnDestroy {
   subscription!: Subscription;
-  private unsubscribe!: Subject<void>;
+  private unsubscribe$!: Subject<void>;
 
   constructor(private authService: AuthService) {}
 
@@ -21,7 +21,7 @@ export class LoginComponent implements OnDestroy {
     console.log(auth);
     this.subscription = this.authService.login(auth)
       .pipe(
-        takeUntil(this.unsubscribe)
+        takeUntil(this.unsubscribe$)
       )
       .subscribe(
         (response) => {
@@ -35,8 +35,8 @@ export class LoginComponent implements OnDestroy {
     this.subscription.unsubscribe();
 
     // Unsubscribe forma 2
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
 }

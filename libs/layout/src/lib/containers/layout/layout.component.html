@@ -2,5 +2,7 @@
   <span>Clientes</span>
 </mat-toolbar>
 
+{{ authService.user$ | async }}
+
 <ng-content select="selector"></ng-content>
 
