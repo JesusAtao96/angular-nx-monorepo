@@ -11,5 +11,5 @@ import { User } from '@dc/models';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
-  constructor(public authService: AuthService) {}
+  constructor(public auth: AuthService) {}
 }
