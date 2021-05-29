@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { authRoutes } from '@dc/auth';
+import { authRoutes, AuthGuard } from '@dc/auth';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dishes' },
@@ -12,7 +12,8 @@ const routes: Routes = [
   {
     path: 'dishes',
     loadChildren: () =>
-      import('@dc/dishes').then((module) => module.DishesModule)
+      import('@dc/dishes').then((module) => module.DishesModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'products',

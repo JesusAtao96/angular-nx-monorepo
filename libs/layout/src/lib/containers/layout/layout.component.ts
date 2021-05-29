@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Observable } from 'rxjs';
-
+import { Component } from '@angular/core';
 import { AuthService } from '@dc/auth';
-import { User } from '@dc/models';
 
 @Component({
   selector: 'dc-layout',
