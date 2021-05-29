@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'auth',
     children: authRoutes
   },
+  {
+    path: 'dishes',
+    loadChildren: () => import('@dc/dishes').then((module) => module.DishesModule)
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
