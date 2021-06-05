@@ -45,5 +45,4 @@ nx g @nrwl/angular:storybook-configuration dc-ui
 nx run dc-ui:storybook
 nx run dc-ui-e2e:e2e
 
-
-nx g @nrwl/angular:ngrx --module=apps/restaurant
+ nx g @nrwl/angular:ngrx --module=apps/restaurant/src/app/app.module.ts --minimal true
