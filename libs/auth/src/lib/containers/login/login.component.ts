@@ -1,9 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { Authenticate } from '@dc/models';
+
+import { Store } from '@ngrx/store';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { AuthService } from '../../services/auth/auth.service';
+import { State } from '@dc/models';
+import { login } from '../../+state/auth.actions';
 
 @Component({
   selector: 'dc-login',
@@ -15,14 +18,16 @@ export class LoginComponent implements OnDestroy {
   subscription: Subscription = new Subscription();
   // private unsubscribe$!: Subject<void>;
 
-  constructor(private authService: AuthService) {}
+  constructor(private store: Store<State>) {}
 
   login(auth: Authenticate):void {
     /* .pipe(
       takeUntil(this.unsubscribe$)
     ) */
     console.log(auth);
-    this.subscription = this.authService.login(auth).subscribe();
+    // this.subscription = this.authService.login(auth).subscribe();
+    this.store.dispatch(login({ payload: auth }));
+
   }
 
   ngOnDestroy() {
