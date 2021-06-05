@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Authenticate, AuthEntity, User } from '@dc/models';
+import { Authenticate, User } from '@dc/models';
 
 const enum AuthActionTypes {
   Login = '[Auth Page] Login',
@@ -7,14 +7,12 @@ const enum AuthActionTypes {
   LoginFail = '[Auth API] Login Fail',
 }
 
-// export const init = createAction('[Auth Page] Init');
-
 export const login = createAction(
   AuthActionTypes.Login,
   props<{ payload: Authenticate }>()
 );
 
-export const loginSucess = createAction(
+export const loginSuccess = createAction(
   AuthActionTypes.LoginSuccess,
   props<{ payload: User }>()
 );
