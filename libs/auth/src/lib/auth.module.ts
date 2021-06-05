@@ -9,6 +9,10 @@ import { AuthInterceptorService } from './guards/auth/auth.interceptor.service';
 
 import { LoginComponent } from './containers/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromAuth from './+state/auth.reducer';
+import { AuthEffects } from './+state/auth.effects';
 
 export const authRoutes: Route[] = [
   {
@@ -25,10 +29,15 @@ export const authRoutes: Route[] = [
       multi: true
     }
   ],
-  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule, ReactiveFormsModule],
-  declarations: [
-    LoginComponent,
-    LoginFormComponent
-  ]
+  imports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducer),
+    EffectsModule.forFeature([AuthEffects])
+  ],
+  declarations: [LoginComponent, LoginFormComponent]
 })
 export class AuthModule {}
