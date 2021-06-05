@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { HttpRequestInterceptorMocksService, adminSuccessCredentials, adminSuccessLogin } from '@dc/mocks';
 import { User } from '@dc/models';
@@ -11,7 +12,7 @@ describe('AuthService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientModule ],
+      imports: [ HttpClientModule, RouterTestingModule ],
       providers: [
         {
           provide: HTTP_INTERCEPTORS,

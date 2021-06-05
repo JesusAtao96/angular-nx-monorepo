@@ -18,6 +18,7 @@ export class ButtonComponent {
       username: 'admin'
     };
 
+    this.visible = false;
     this.clicked.emit(user);
   }
 }
